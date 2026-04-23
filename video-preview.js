@@ -169,7 +169,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // Reset video styles
     video.style.width = '100%';
     video.style.height = 'auto';
-    video.style.maxHeight = isMobile() ? '140px' : '75vh';
+    video.style.maxHeight = '75vh';
 
     // Reset title styles
     title.style.fontSize = isMobile() ? '1rem' : '1.2rem';
@@ -183,6 +183,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     video.play();
   };
+
+  window.playVideo = playVideo;
 
   optionWifi.onclick = () => playVideo('wifi');
   optionS2S.onclick = () => playVideo('s2s');
@@ -237,7 +239,7 @@ window.addEventListener('DOMContentLoaded', function () {
   video.style.width = '100%';
   video.style.borderRadius = '12px';
   video.style.background = '#000';
-  video.style.maxHeight = isMobile() ? '140px' : '75vh';
+  video.style.maxHeight = '75vh';
 
   // Title
   title = document.createElement('h3');
@@ -288,13 +290,13 @@ window.addEventListener('DOMContentLoaded', function () {
       modal.style.pointerEvents = 'auto';
       modal.style.cursor = 'grab';
       modal.style.zIndex = '10000';
-      modal.style.maxHeight = '35vh';
+      modal.style.maxHeight = '50vh';
       modal.style.overflowY = 'auto';
 
       // Update video size for mobile floating
       video.style.width = '100%';
       video.style.height = 'auto';
-      video.style.maxHeight = '140px';
+      video.style.maxHeight = '250px';
 
       // Update title styling
       title.style.fontSize = '0.9rem';

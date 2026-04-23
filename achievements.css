@@ -34,8 +34,8 @@
   margin-bottom: 8px;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #0e3c39;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 800;
 }
 
 .achievements-intro {
@@ -89,8 +89,8 @@
   margin: 0;
   font-size: 1.18rem;
   color: #0e3c39;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 900;
   line-height: 1.35;
 }
 
@@ -132,7 +132,7 @@
   .achievement-icon {
     width: 56px;
     height: 56px;
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
 
   .achievement-card h3 {
@@ -171,7 +171,7 @@
   .achievement-icon {
     width: 48px;
     height: 48px;
-    font-size: 1.8rem !important;
+    font-size: 2.5rem !important;
   }
 
   .achievement-card h3 {
@@ -199,8 +199,8 @@
   margin-bottom: 8px;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #0e3c39;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 800;
 }
 
 .gallery-intro {

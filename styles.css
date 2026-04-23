@@ -305,6 +305,8 @@
   .other-business-modal {
     padding: 16px;
     max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .other-business-modal__close {
@@ -405,6 +407,8 @@
     width: 100%;
     padding: 14px;
     max-width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
     border-radius: 16px;
   }
 
