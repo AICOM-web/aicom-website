@@ -1,0 +1,57 @@
+.corevals-page .corevals-section {
+  margin-top: 0;
+}
+
+.corevals-page .team-section__inner {
+  background: #f9fcfd;
+  border-radius: 18px;
+  padding: clamp(18px, 2.8vw, 28px);
+  box-shadow: 0 10px 28px rgba(8, 35, 44, 0.06);
+}
+
+.corevals-page .team-section__intro {
+  padding: 0;
+  margin-bottom: 16px;
+  max-width: 860px;
+  text-align: left;
+}
+
+.corevals-page .corevals-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.corevals-page .corevals-card {
+  text-align: left;
+  border: 1px solid #e3eff2;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(8, 35, 44, 0.06);
+}
+
+.corevals-page .corevals-card .team-card__body {
+  display: grid;
+  gap: 8px;
+}
+
+.corevals-page .corevals-card h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.corevals-page .corevals-card .team-card__desc {
+  margin: 0;
+  color: #3a5b63;
+  line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+  .corevals-page .corevals-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .corevals-page .corevals-grid {
+    grid-template-columns: 1fr;
+  }
+}

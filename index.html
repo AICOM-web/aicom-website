@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AICOM Marketing Services</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <!-- Google Fonts: Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="faq-float.js" defer></script>
+
+  <!-- Video preview script -->
+  <script src="video-preview.js" defer></script>
+</head>
+
+<body>
+  <!-- Floating FAQ Button -->
+  <a id="faq-float-btn" aria-label="Open FAQs" href="faq.html">
+    <span class="material-icons" style="font-size:1.7rem;vertical-align:middle;">help_outline</span>
+  </a>
+
+  <!-- FAQ Modal -->
+  <div id="faq-modal"
+    style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.32);align-items:center;justify-content:center;">
+    <div
+      style="background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;width:400px;padding:28px 22px 18px 22px;position:relative;">
+      <button id="faq-modal-close" aria-label="Close FAQ"
+        style="position:absolute;top:10px;right:18px;background:none;border:none;font-size:2rem;cursor:pointer;">
+        <span class="material-icons" style="font-size:2rem;">close</span>
+      </button>
+      <h2 style="margin-top:0;font-size:1.3rem;color:#0e3c39;font-family:'Segoe UI',Arial,sans-serif;">Frequently Asked
+        Questions</h2>
+      <div style="font-size:1rem;color:#1d3b43;">
+        <strong>Q1: What is AICOM?</strong><br>
+        A: AICOM is a marketing services company.<br><br>
+        <strong>Q2: How can I contact you?</strong><br>
+        A: Use the Contact section or email us directly.<br><br>
+        <strong>Q3: Where are you located?</strong><br>
+        A: Our address is available in the About section.
+      </div>
+    </div>
+  </div>
+  <div id="otherBusinessModalOverlay" class="other-business-modal-overlay" aria-hidden="true">
+    <div class="other-business-modal" role="dialog" aria-modal="true" aria-labelledby="other-business-modal-title">
+      <button class="other-business-modal__close" id="otherBusinessModalClose" aria-label="Close Other Business">
+        <span class="material-icons">close</span>
+      </button>
+      <div class="other-business-modal__header">
+        <h2 id="other-business-modal-title">Other Business</h2>
+      </div>
+      <div class="other-business-modal__grid">
+        <div class="other-business-modal__media">
+          <img src="assets\aicom.png" alt="Modern business workspace" class="other-business-modal__image" />
+        </div>
+        <div class="other-business-modal__details">
+          <div class="other-business-modal__section">
+            <p>A one-stop shop designed to provide essential daily services for the community. The main branch offers a
+              wide range of grocery items, pharmaceutical products, and convenient payment solutions. Customers can
+              easily access everyday necessities, healthcare needs, and digital services in one place.</p>
+          </div>
+          <div class="other-business-modal__section">
+            <h3>Services Offered</h3>
+            <ul class="other-business-modal__services">
+              <li>Grocery essentials and daily needs</li>
+              <li>Pharmacy and over-the-counter medicines</li>
+              <li>Bills payment and e-commerce support</li>
+            </ul>
+          </div>
+          <div class="other-business-modal__section">
+            <h3>Branches</h3>
+            <ul class="other-business-modal__branches">
+              <li>Santa Rita Karsada Branch</li>
+              <li>Balagtas Branch</li>
+            </ul>
+          </div>
+          <div class="other-business-modal__section">
+            <p>Both branches are dedicated to delivering accessible, affordable, and high-quality services. Through
+              continuous improvement and customer-focused solutions, ALLENONE aims to support the daily needs of every
+              household in the community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="logo" aria-label="AICOM Home">
+        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo-image" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobileSidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="faq.html">FAQS</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <div class="sidebar-head">
+      <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="sidebar-logo" />
+      <button class="sidebar-close" id="menuClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="faq.html">FAQS</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy animate-on-scroll">
+          <p class="hero-eyebrow">Fiber &amp; connectivity</p>
+          <h1>AICOM Marketing Services</h1>
+          <p class="hero-lead">
+            Reliable telecommunication services and high-speed fiber internet for
+            homes and businesses in Batangas and nearby areas—backed by a team
+            focused on dependable service and clear communication.
+          </p>
+          <a href="#services" class="btn-primary">Explore our services</a>
+        </div>
+        <div class="hero-image-wrap animate-on-scroll animate-delay-1">
+          <img src="assets/hero.jpg" alt="AICOM company building" />
+        </div>
+      </div>
+    </section>
+
+    <section class="company" id="about">
+      <div class="container">
+        <h2 class="title-ribbon animate-on-scroll">The Company</h2>
+        <p class="section-copy animate-on-scroll animate-delay-1">
+          AICOM Marketing Services was established to provide reliable
+          telecommunication services, focusing on delivering high-speed internet
+          through advanced fiber-optic technology. The company operates within
+          the telecommunication industry, serving residential areas and
+          supporting digital connectivity in Batangas and nearby locations.
+        </p>
+      </div>
+
+      <div class="infocard-carousel cards-carousel animate-on-scroll animate-delay-2" id="achievements" role="region"
+        aria-roledescription="carousel" aria-label="Company highlights">
+        <button class="carousel-btn carousel-btn-prev" id="cardsPrev" type="button" aria-label="Previous slide">
+          <span class="material-icons" style="font-size:2rem;">chevron_left</span>
+        </button>
+        <div class="infocard-carousel__viewport">
+          <div class="cards-row infocard-carousel__track" id="cardsTrack" tabindex="0">
+            <article class="info-card">
+              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
+                alt="Community partners" />
+              <div class="card-body">
+                <h3>Community Partners</h3>
+                <p>Trusted partners supporting our mission in different regions.</p>
+                <a class="info-card__cta" href="community-partners.html">See more</a>
+              </div>
+            </article>
+            <article class="info-card">
+              <img src="assets\achieve.png" alt="Achievements" />
+              <div class="card-body">
+                <h3>Achievements</h3>
+                <p>Key milestones and accomplishments in our growth and service expansion.</p>
+                <a class="info-card__cta" href="achievements.html">See more</a>
+              </div>
+            </article>
+            <article class="info-card">
+              <img src="assets\org-chart.png" alt="Organizational chart" />
+              <div class="card-body">
+                <h3>Organizational Chart</h3>
+                <p>A brief overview of the company structure and responsibilities.</p>
+                <a class="info-card__cta" href="organizational-chart.html">See more</a>
+              </div>
+            </article>
+            <article class="info-card">
+              <img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=900&q=80"
+                alt="Mission and vision" />
+              <div class="card-body">
+                <h3>Mission and Vision</h3>
+                <p>Our commitment to quality service and customer satisfaction.</p>
+                <a class="info-card__cta" href="mission-vision.html">See more</a>
+              </div>
+            </article>
+            <article class="info-card">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+                alt="Core values" />
+              <div class="card-body">
+                <h3>Core Values</h3>
+                <p>The principles that shape our culture, teamwork, and innovation.</p>
+                <a class="info-card__cta" href="core-values.html">See more</a>
+              </div>
+            </article>
+            <article class="info-card">
+              <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+                alt="Company milestone timeline" />
+              <div class="card-body">
+                <h3>Company Milestone</h3>
+                <p>A timeline of key achievements and growth of the company from its establishment to the present.</p>
+                <a class="info-card__cta" href="company-milestone.html">See more</a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-next" id="cardsNext" type="button" aria-label="Next slide">
+          <span class="material-icons" style="font-size:2rem;">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="products" id="services">
+      <div class="container">
+        <h2 class="title-ribbon products-title animate-on-scroll">Products and Services</h2>
+        <div class="products-shell">
+          <div class="products-grid">
+            <div class="products-media animate-on-scroll animate-delay-1">
+              <div class="product-slideshow" id="productSlideshow">
+                <div class="slides-window">
+                  <img src="assets/1.jpg" alt="Product promo 1" class="product-slide is-active" />
+                  <img src="assets/5.jpg" alt="Product promo 5" class="product-slide" />
+                  <img src="assets/21.jpg" alt="Product promo 21" class="product-slide" />
+                </div>
+              </div>
+            </div>
+
+            <div class="products-copy animate-on-scroll animate-delay-2">
+              <h3 class="products-copy__heading">Reliable Fiber Plans for Daily Needs</h3>
+              <p class="products-copy__lead">
+                AICOM delivers stable, affordable internet services designed for
+                homes, students, and small businesses.
+              </p>
+              <ul class="service-list">
+                <li>
+                  <span class="material-icons service-icon" aria-hidden="true">wifi</span>
+                  <div>
+                    <strong>Flexible Internet Plans</strong>
+                    <p>Budget-friendly options matched to everyday usage.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="material-icons service-icon" aria-hidden="true">speed</span>
+                  <div>
+                    <strong>Fiber-Powered Speed</strong>
+                    <p>Consistent connectivity backed by modern infrastructure.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="material-icons service-icon" aria-hidden="true">support_agent</span>
+                  <div>
+                    <strong>Responsive Support</strong>
+                    <p>Fast and friendly customer assistance when needed.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="material-icons service-icon" aria-hidden="true">build</span>
+                  <div>
+                    <strong>Easy Installation</strong>
+                    <p>Professional setup for a smooth start and dependable service.</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="products-cta">
+                <a href="#" class="btn-primary">Subscribe Now</a>
+                <button type="button" class="btn-outline" id="otherBusinessBtn">Other Business</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="title-ribbon contact-title animate-on-scroll">Contact Us</h2>
+        <div class="contact-grid">
+          <div class="contact-card animate-on-scroll animate-delay-1">
+            <h3>Get in Touch</h3>
+            <p>
+              Reach out to AICOM for inquiries, service assistance, and business
+              concerns.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <span class="material-icons contact-icon" aria-hidden="true">location_on</span>
+                <div>
+                  <strong>Address</strong>
+                  <p> 2nd Floor, Aicom Building, Caltex Rd, Sta Rita, Batangas</p>
+                </div>
+              </li>
+              <li>
+                <span class="material-icons contact-icon" aria-hidden="true">mail</span>
+                <div>
+                  <strong>Email</strong>
+                  <p>
+                    <a href="mailto:aicom.s2sloading@gmail.com">aicom.s2sloading@gmail.com</a>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="material-icons contact-icon" aria-hidden="true">call</span>
+                <div>
+                  <strong>Phone</strong>
+                  <p><a href="tel:+630000000000">+63 953 259 1982</a></p>
+                </div>
+              </li>
+              <li>
+                <span class="material-icons contact-icon" aria-hidden="true">schedule</span>
+                <div>
+                  <strong>Business Hours</strong>
+                  <p>Monday to Saturday, 8:00 AM - 5:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="contact-map-wrap animate-on-scroll animate-delay-2" aria-label="Company location map">
+            <iframe title="AICOM Location Map"
+              src="https://maps.google.com/maps?q=2nd%20Floor%2C%20Aicom%20Building%2C%20Caltex%20Rd%2C%20Sta%20Rita%2C%20Batangas&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-logo-wrap">
+        <img src="assets\LOGO-NOBG.png" alt="AICOM Logo" class="footer-logo" />
+      </div>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="faq.html">FAQS</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/AicomS2SConvergePH" class="footer-social-icon" target="_blank"
+          aria-label="Facebook">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="12" fill="#fff" />
+            <path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z"
+              fill="#36d6cc" />
+          </svg>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="footer-social-icon"
+          aria-label="Gmail" target="_blank" rel="noopener">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="12" fill="#fff" />
+            <path
+              d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
+              fill="#36d6cc" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2026 AICOM Marketing Services. Designed by <span
+        style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
+    </div>
+  </footer>
+  <script>
+    // Other Business Modal logic
+    const otherBusinessBtn = document.getElementById('otherBusinessBtn');
+    const otherBusinessModalOverlay = document.getElementById('otherBusinessModalOverlay');
+    const otherBusinessModalClose = document.getElementById('otherBusinessModalClose');
+    if (otherBusinessBtn && otherBusinessModalOverlay && otherBusinessModalClose) {
+      function openOtherBusinessModal() {
+        otherBusinessModalOverlay.style.display = 'flex';
+        otherBusinessModalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        otherBusinessModalClose.focus();
+      }
+      function closeOtherBusinessModal() {
+        otherBusinessModalOverlay.style.display = 'none';
+        otherBusinessModalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        otherBusinessBtn.focus();
+      }
+      otherBusinessBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openOtherBusinessModal();
+      });
+      otherBusinessModalClose.addEventListener('click', closeOtherBusinessModal);
+      otherBusinessModalOverlay.addEventListener('click', function (e) {
+        if (e.target === otherBusinessModalOverlay) closeOtherBusinessModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (otherBusinessModalOverlay.style.display === 'flex' && e.key === 'Escape') {
+          closeOtherBusinessModal();
+        }
+      });
+    }
+    const menuToggle = document.getElementById("menuToggle");
+    const menuClose = document.getElementById("menuClose");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
+    const cardsTrack = document.getElementById("cardsTrack");
+    const cardsPrev = document.getElementById("cardsPrev");
+    const cardsNext = document.getElementById("cardsNext");
+    const productSlides = document.querySelectorAll(".product-slide");
+    const productDots = document.querySelectorAll(".dot");
+    let productIndex = 0;
+    let productTimer;
+
+    function openMenu() {
+      document.body.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      mobileSidebar.setAttribute("aria-hidden", "false");
+    }
+
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      mobileSidebar.setAttribute("aria-hidden", "true");
+    }
+
+    menuToggle.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+    sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    // Company carousel: explicit left/right directional navigation
+    (function setupManualCardsCarousel() {
+      function getSlideWidth() {
+        const firstCard = cardsTrack.querySelector('.info-card');
+        if (!firstCard) return 0;
+        const trackStyles = window.getComputedStyle(cardsTrack);
+        const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap || 0);
+        return firstCard.getBoundingClientRect().width + gap;
+      }
+      function moveCarousel(direction) {
+        const slideWidth = getSlideWidth();
+        if (!slideWidth) return;
+        cardsTrack.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
+      }
+      cardsPrev.addEventListener('click', () => {
+        moveCarousel(-1);
+      });
+      cardsNext.addEventListener('click', () => {
+        moveCarousel(1);
+      });
+      // Keyboard navigation
+      cardsTrack.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          moveCarousel(-1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          moveCarousel(1);
+        }
+      });
+    })();
+
+    function showProductSlide(index) {
+      productIndex = (index + productSlides.length) % productSlides.length;
+      productSlides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === productIndex);
+      });
+      productDots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === productIndex);
+      });
+    }
+
+    function startProductAutoplay() {
+      clearInterval(productTimer);
+      productTimer = setInterval(() => {
+        showProductSlide(productIndex + 1);
+      }, 3500);
+    }
+
+    productDots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        showProductSlide(i);
+        startProductAutoplay();
+      });
+    });
+
+    showProductSlide(0);
+    startProductAutoplay();
+
+    // Scroll Animations Observer
+    const scrollObserverOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, scrollObserverOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      scrollObserver.observe(el);
+    });
+
+  </script>
+</body>
+
+</html>

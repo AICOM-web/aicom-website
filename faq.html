@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | AICOM</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="faqs.css" />
+   <link rel="stylesheet" href="details.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="faq-float.js" defer></script>
+  <script src="video-preview.js" defer></script>
+  
+</head>
+<body>
+  <!-- Floating FAQ Button -->
+  <a id="faq-float-btn" aria-label="Open FAQs" href="faq.html">
+    <span class="material-icons" style="font-size:1.7rem;vertical-align:middle;">help_outline</span>
+  </a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="AICOM Home">
+        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo-image" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="faq.html">FAQS</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+    <div class="sidebar-head">
+      <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="sidebar-logo" />
+      <button class="sidebar-close" id="menuClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#achievements">FAQS</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>&gt;</span>
+    <span class="current">FAQs</span>
+  </div>
+
+
+  <main class="container">
+    <section class="faq-section">
+      <h1 class="title-ribbon">Frequently Asked Questions</h1>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+            What services does AICOM offer?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            AICOM offers internet, ALLENONE grocery, pharmacy, and payment center services for the community.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+            How can I apply for internet service?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            You can reach us via our website contact form, phone, or visit any of our branches.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+           What should I do if I have no internet connection?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            Main Branch and Balagtas Branch. See our website for full addresses and maps.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+           Are your services available in all areas?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            Main Branch and Balagtas Branch. See our website for full addresses and maps.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+           How can I buy load from AICOM?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            Main Branch and Balagtas Branch. See our website for full addresses and maps.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="material-icons">help_outline</span>
+           What should I do if I did not receive my load?
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </button>
+          <div class="faq-answer">
+            Main Branch and Balagtas Branch. See our website for full addresses and maps.
+          </div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-logo-wrap">
+        <img src="assets/LOGO-NOBG.png" alt="AICOM Logo" class="footer-logo" />
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="faq.html">FAQS</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/AicomS2SConvergePH" class="footer-social-icon" target="_blank" aria-label="Facebook">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z" fill="#36d6cc"/></svg>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="footer-social-icon" aria-label="Gmail" target="_blank" rel="noopener">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z" fill="#36d6cc"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2026 AICOM Marketing Services. Designed by <span style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
+    </div>
+  </footer>
+  <script>
+    // FAQ accordion logic
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        if (!expanded) {
+          this.setAttribute('aria-expanded', 'true');
+          this.nextElementSibling.style.display = 'block';
+        }
+      });
+    });
+    // Mobile menu logic (copied from index.html)
+    const menuToggle = document.getElementById("menuToggle");
+    const menuClose = document.getElementById("menuClose");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
+    function openMenu() {
+      document.body.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      mobileSidebar.setAttribute("aria-hidden", "false");
+    }
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      mobileSidebar.setAttribute("aria-hidden", "true");
+    }
+    menuToggle.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+    sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  </script>
+</body>
+</html>

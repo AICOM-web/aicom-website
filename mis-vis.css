@@ -1,0 +1,41 @@
+.misvis-page .org-section__inner {
+  width: min(68ch, calc(100% - min(44%, 520px) - 28px));
+  max-width: 100%;
+  padding-right: 18px;
+}
+
+.misvis-page .misvis-section {
+  margin-top: 0;
+}
+
+.misvis-page .misvis-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.misvis-page .misvis-card {
+  text-align: left;
+  padding: 22px 18px;
+}
+
+.misvis-page .misvis-card h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.1rem, 2.1vw, 1.35rem);
+}
+
+.misvis-page .misvis-card .team-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #385860;
+}
+
+@media (max-width: 900px) {
+  .misvis-page .org-section__inner {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .misvis-page .misvis-grid {
+    grid-template-columns: 1fr;
+  }
+}

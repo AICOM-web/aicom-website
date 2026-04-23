@@ -1,0 +1,521 @@
+.org-page .org-layout {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.org-page .org-section {
+  position: relative;
+  width: min(1180px, 92vw);
+  margin: 28px auto 44px;
+  padding: clamp(18px, 3vw, 36px) 0;
+  overflow: hidden;
+}
+
+.org-page .org-section__banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(44%, 520px);
+  background:
+    linear-gradient(to left, rgba(244, 245, 246, 0.08), rgba(244, 245, 246, 0.34)),
+    url("assets/org-chart.png") center / contain no-repeat;
+  opacity: 1;
+  z-index: 0;
+  cursor: zoom-in;
+  animation: orgBannerFloat 5.6s ease-in-out infinite;
+  filter: contrast(1.22) saturate(1.05) brightness(0.92);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.org-page .org-section__banner:hover,
+.org-page .org-section__banner:focus-visible {
+  transform: scale(1.035);
+  filter: contrast(1.3) saturate(1.08) brightness(0.9) drop-shadow(0 10px 22px rgba(12, 47, 58, 0.22));
+  outline: none;
+}
+
+.org-page .org-section__inner {
+  position: relative;
+  z-index: 1;
+  width: min(66ch, 62%);
+  padding-right: 22px;
+  text-align: left;
+}
+
+.org-page .org-section__inner h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #0e2a31;
+}
+
+.org-page .org-section__inner p {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  line-height: 1.84;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #203a41;
+}
+
+.org-page .org-section__inner p:last-child {
+  margin-bottom: 0;
+}
+
+.org-page .team-section {
+  width: min(1180px, 92vw);
+  margin: 0 auto 46px;
+}
+
+.org-page .team-section__inner h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.25;
+  color: #0f2e36;
+  letter-spacing: 0.01em;
+}
+
+.org-page .team-section__intro {
+
+  padding: 0 6px;
+  font-size: 1rem;
+  line-height: 1.82;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #2b4850;
+}
+
+/* ORG TREE WRAPPER */
+.org-tree-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 0 40px;
+  display: flex;
+  justify-content: center;
+  scrollbar-width: thin;
+}
+
+.org-tree {
+  display: inline-block;
+}
+
+/* ORG TREE */
+.org-tree ul {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.org-tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 4px 0 4px;
+  transition: all 0.5s;
+}
+
+/* We will use ::before and ::after to draw the connectors */
+.org-tree li::before,
+.org-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #1abcb2;
+  width: 50%;
+  height: 20px;
+}
+
+.org-tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #1abcb2;
+}
+
+/* We need to remove left-right connectors from elements without any siblings */
+.org-tree li:only-child::after,
+.org-tree li:only-child::before {
+  display: none;
+}
+
+/* Remove space from the top of single children */
+.org-tree li:only-child {
+  padding-top: 0;
+}
+
+/* Remove left connector from first child and right connector from last child */
+.org-tree li:first-child::before,
+.org-tree li:last-child::after {
+  border: 0 none;
+}
+
+/* Adding back the vertical connector to the last nodes */
+.org-tree li:last-child::before {
+  border-right: 2px solid #1abcb2;
+  border-radius: 0 4px 0 0;
+}
+
+.org-tree li:first-child::after {
+  border-radius: 4px 0 0 0;
+}
+
+/* Time to add downward connectors from parents */
+.org-tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #1abcb2;
+  width: 0;
+  height: 20px;
+  transform: translateX(-1px);
+}
+
+.org-tree .team-card {
+  display: inline-block;
+  width: 215px;
+  margin: 0 auto;
+  position: relative;
+  padding: 12px 6px;
+  white-space: normal;
+}
+
+/* Smaller photos to fit */
+.org-tree .team-card__photo {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+}
+
+.org-tree .team-card h3 {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.org-tree .team-card p {
+  font-size: 0.75rem;
+}
+
+.org-page .team-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 14px 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(8, 35, 44, 0.08);
+  animation: teamCardIn 420ms ease both;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.org-page .team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(8, 35, 44, 0.11);
+}
+
+.org-page .team-card__avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  border: 3px solid #f0f7f8;
+  overflow: hidden;
+  background: #eef9f8;
+  display: grid;
+  place-items: center;
+  animation: teamAvatarBob 4.8s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.org-page .team-card:hover .team-card__avatar {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 18px rgba(8, 35, 44, 0.12);
+}
+
+.org-page .team-card__avatar svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.org-page .team-card__photo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 12px;
+  border: 3px solid #f0f7f8;
+  display: block;
+}
+
+/* Stagger animations slightly for a lively feel */
+.org-page .team-leaders .team-card:nth-child(1) .team-card__avatar,
+.org-page .team-grid .team-card:nth-child(5n + 1) .team-card__avatar {
+  animation-delay: 0ms;
+}
+
+.org-page .team-leaders .team-card:nth-child(2) .team-card__avatar,
+.org-page .team-grid .team-card:nth-child(5n + 2) .team-card__avatar {
+  animation-delay: 160ms;
+}
+
+.org-page .team-grid .team-card:nth-child(5n + 3) .team-card__avatar {
+  animation-delay: 320ms;
+}
+
+.org-page .team-grid .team-card:nth-child(5n + 4) .team-card__avatar {
+  animation-delay: 480ms;
+}
+
+.org-page .team-grid .team-card:nth-child(5n + 5) .team-card__avatar {
+  animation-delay: 640ms;
+}
+
+@keyframes teamAvatarBob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes teamCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.org-page .team-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.03rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #17353d;
+}
+
+.org-page .team-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #45626b;
+}
+
+.org-page .org-lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 1000;
+}
+
+.org-page .org-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.org-page .org-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 19, 24, 0.62);
+  backdrop-filter: blur(2px);
+}
+
+.org-page .org-lightbox__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 1120px);
+  max-height: 90vh;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 14px;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.24);
+  transform: scale(0.88);
+  opacity: 0;
+  transition: transform 0.24s ease, opacity 0.24s ease;
+}
+
+.org-page .org-lightbox.is-open .org-lightbox__dialog {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.org-page .org-lightbox__image {
+  display: block;
+  width: 100%;
+  max-height: calc(90vh - 28px);
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f2f6f7;
+  filter: contrast(1.22) saturate(1.05) brightness(0.92);
+}
+
+.org-page .org-lightbox__close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #13333b;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+@keyframes orgBannerFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 860px) {
+  .org-page .org-section {
+    margin-top: 18px;
+    padding: 18px 0 26px;
+  }
+
+  .org-page .org-section__banner {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background:
+      linear-gradient(to top, rgba(244, 245, 246, 0.1), rgba(244, 245, 246, 0.36)),
+      url("assets/org-chart.png") center / contain no-repeat;
+  }
+
+  .org-page .org-section__inner {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .org-page .org-section__inner h1 {
+    margin-bottom: 12px;
+  }
+
+  .org-page .org-section__inner p {
+    line-height: 1.72;
+  }
+
+  .org-page .team-section {
+    margin-bottom: 36px;
+  }
+}
+
+/* Mobile Responsive Org Chart (Flattened Grid Layout) */
+@media (max-width: 768px) {
+  .org-tree-wrapper {
+    overflow-x: hidden;
+    padding: 10px 10px 40px 10px;
+  }
+
+  .org-tree {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* Flatten the nested lists so .team-card elements become direct grid children */
+  .org-tree ul,
+  .org-tree li {
+    display: contents;
+  }
+
+  /* Remove all connecting lines completely */
+  .org-tree li::before,
+  .org-tree li::after,
+  .org-tree ul ul::before,
+  .org-tree li:only-child::after,
+  .org-tree li:only-child::before,
+  .org-tree li:first-child::before,
+  .org-tree li:last-child::after,
+  .org-tree li:last-child::before,
+  .org-tree li:first-child::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .org-tree .team-card {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 16px 10px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Make CEO card span full width for better hierarchy appearance */
+  .org-tree>ul>li>.team-card {
+    grid-column: 1 / -1;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .org-tree .team-card__photo {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  .org-tree .team-card h3 {
+    font-size: 0.95rem;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .org-tree .team-card p {
+    font-size: 0.8rem;
+    margin: 0 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .org-page .org-section__banner,
+  .org-page .org-lightbox,
+  .org-page .org-lightbox__dialog,
+  .org-page .team-card,
+  .org-page .team-card__avatar {
+    animation: none;
+    transition: none;
+  }
+}
