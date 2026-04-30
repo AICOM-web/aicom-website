@@ -29,7 +29,7 @@ body.menu-open {
 }
 
 
-.topbar {
+.site-header {
   background: var(--white);
   border-bottom: 3px solid var(--brand);
   position: sticky;
@@ -37,18 +37,26 @@ body.menu-open {
   z-index: 1000;
 }
 
-.topbar-inner {
+.nav-wrap {
   width: min(1180px, 92vw);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  position: relative;
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.logo-image {
+  width: 80px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -76,16 +84,19 @@ body.menu-open {
 }
 
 .main-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 26px;
+  justify-content: center;
+  gap: 55px;
 }
 
 .main-nav a {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.8px;
   color: var(--ink);
   font-weight: 700;
@@ -95,6 +106,85 @@ body.menu-open {
 .main-nav a:hover {
   color: var(--brand-dark);
   transform: translateY(-2px);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-social {
+  display: flex;
+  gap: 10px;
+}
+
+.header-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #21fdef;
+  background: transparent;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.header-social-icon:hover {
+  transform: translateY(-2px);
+  background: #e9fbf9;
+}
+
+.header-social-icon svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.fb-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.fb-dropdown-btn {
+  cursor: pointer;
+  padding: 0;
+}
+
+.fb-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: -10px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(8, 65, 74, 0.15);
+  border-radius: 12px;
+  min-width: 160px;
+  padding: 8px 0;
+  z-index: 2000;
+  flex-direction: column;
+}
+
+.fb-dropdown-wrapper:focus-within .fb-dropdown-menu {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+.fb-dropdown-menu a {
+  padding: 12px 18px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fb-dropdown-menu a:hover, .fb-dropdown-menu a:focus {
+  background: #e9fbf9;
+  color: var(--brand-dark);
 }
 
 .mobile-sidebar {
@@ -366,12 +456,22 @@ p {
   color: #2b4850;
 }
 
+@media (max-width: 1024px) {
+  .main-nav {
+    gap: 25px;
+  }
+  
+  .main-nav a {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 700px) {
-  .topbar-inner {
+  .nav-wrap {
     padding: 8px 0;
   }
 
-  .logo {
+  .logo-image {
     width: 122px;
     height: 56px;
   }

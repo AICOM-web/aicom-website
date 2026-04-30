@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,27 +8,56 @@
   <link rel="stylesheet" href="details.css" />
   <link rel="stylesheet" href="achievements.css" />
   <link rel="stylesheet" href="footer.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+  <!-- Banner Lightbox Script -->
+  <script src="banner-lightbox.js" defer></script>
 </head>
 
 <body class="org-page achievements-page">
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="index.html#home">
-        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo" />
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html#home" class="logo" aria-label="AICOM Home">
+        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo-image" />
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="faq.html">FAQS</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="main-nav">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="faq.html">FAQS</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="header-social">
+          <div class="fb-dropdown-wrapper">
+            <button class="header-social-icon fb-dropdown-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z"
+                  fill="#36d6cc" />
+              </svg>
+            </button>
+            <div class="fb-dropdown-menu">
+              <a href="https://www.facebook.com/AicomS2SConvergePH" target="_blank">AICOM S2S</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHNCR" target="_blank">AICOM NCR</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHCavite" target="_blank">AICOM CAVITE</a>
+            </div>
+          </div>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="header-social-icon"
+            aria-label="Gmail" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
+                fill="#36d6cc" />
+            </svg>
+          </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileSidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -54,25 +84,21 @@
 
   <main class="org-layout" role="main">
     <section class="org-section">
-      <div
-        class="org-section__banner"
-        aria-hidden="true"
-        style='background:
+      <div class="org-section__banner" aria-hidden="true" style='background:
           linear-gradient(to left, rgba(54, 214, 204, 0.15), rgba(54, 214, 204, 0.3)),
-          url("assets/achieve.png") center / cover no-repeat;'
-      ></div>
+          url("assets/achieve.png") center / cover no-repeat;'></div>
       <div class="org-section__inner">
         <h1>Our Achievements</h1>
         <p>
-          AICOM has consistently grown and innovated to deliver reliable fiber-optic 
+          AICOM has consistently grown and innovated to deliver reliable fiber-optic
           services and high-speed internet connectivity across Batangas and nearby regions.
         </p>
         <p>
-          These accomplishments reflect our commitment to service excellence, customer 
+          These accomplishments reflect our commitment to service excellence, customer
           satisfaction, and continuous improvement in the telecommunications industry.
         </p>
         <p>
-          From expanding service coverage to building community partnerships, each 
+          From expanding service coverage to building community partnerships, each
           milestone represents our dedication to connecting people and businesses.
         </p>
       </div>
@@ -90,8 +116,8 @@
             <span class="material-symbols-outlined achievement-icon">language</span>
             <h3>Service Coverage Expansion</h3>
             <p>
-              Extended fiber-optic network coverage to underserved areas in Batangas 
-              and nearby provinces, providing high-speed internet access to thousands 
+              Extended fiber-optic network coverage to underserved areas in Batangas
+              and nearby provinces, providing high-speed internet access to thousands
               of new households and businesses.
             </p>
           </article>
@@ -100,8 +126,8 @@
             <span class="material-symbols-outlined achievement-icon">groups</span>
             <h3>Customer Growth</h3>
             <p>
-              Built a strong customer base of residential and commercial clients who 
-              rely on AICOM for dependable, affordable internet services with responsive 
+              Built a strong customer base of residential and commercial clients who
+              rely on AICOM for dependable, affordable internet services with responsive
               customer support.
             </p>
           </article>
@@ -110,7 +136,7 @@
             <span class="material-symbols-outlined achievement-icon">build</span>
             <h3>Infrastructure Development</h3>
             <p>
-              Invested in modern fiber-optic infrastructure and technology upgrades 
+              Invested in modern fiber-optic infrastructure and technology upgrades
               to deliver consistent, high-speed connectivity and ensure service reliability.
             </p>
           </article>
@@ -119,7 +145,7 @@
             <span class="material-symbols-outlined achievement-icon">star</span>
             <h3>Service Quality Recognition</h3>
             <p>
-              Earned customer trust and loyalty through consistent service delivery, 
+              Earned customer trust and loyalty through consistent service delivery,
               responsive support, and competitive pricing in the fiber internet market.
             </p>
           </article>
@@ -128,7 +154,7 @@
             <span class="material-symbols-outlined achievement-icon">handshake</span>
             <h3>Strategic Partnerships</h3>
             <p>
-              Established collaboration with trusted partners like SVD Manpower Services, 
+              Established collaboration with trusted partners like SVD Manpower Services,
               RZ IT Solutions, and local organizations to strengthen operations and service delivery.
             </p>
           </article>
@@ -137,7 +163,7 @@
             <span class="material-symbols-outlined achievement-icon">trending_up</span>
             <h3>Business Growth</h3>
             <p>
-              Achieved consistent year-over-year growth while maintaining operational efficiency 
+              Achieved consistent year-over-year growth while maintaining operational efficiency
               and financial sustainability in a competitive telecommunications market.
             </p>
           </article>
@@ -152,48 +178,106 @@
         <p class="gallery-intro">
           Moments from our journey of growth, expansion, and success in telecommunications.
         </p>
-        
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="assets/achievements/viber_image_2026-04-16_11-08-56-713.jpg" alt="Achievement moment 1" loading="lazy" />
+
+        <select class="gallery-tabs-mobile" aria-label="Select Achievement Category">
+          <option value="s2s">Project: Brgy S2S</option>
+          <option value="pamato">Project Pamato</option>
+          <option value="mdu">MDU</option>
+          <option value="sli">SLI</option>
+          <option value="grooming">Nap Grooming</option>
+          <option value="awarding">Awarding of Employees</option>
+        </select>
+
+        <div class="gallery-tabs">
+          <button class="gallery-tab active" data-tab="s2s">Project: Brgy S2S</button>
+          <button class="gallery-tab" data-tab="pamato">Project Pamato</button>
+          <button class="gallery-tab" data-tab="mdu">MDU</button>
+          <button class="gallery-tab" data-tab="sli">SLI</button>
+          <button class="gallery-tab" data-tab="grooming">Nap Grooming</button>
+          <button class="gallery-tab" data-tab="awarding">Awarding of Employees</button>
+        </div>
+
+        <div class="gallery-content">
+          <!-- Brgy S2S -->
+          <div class="gallery-pane active" id="s2s">
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_7yl9007yl9007yl9.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_b3cvu3b3cvu3b3cv.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_jgrbrejgrbrejgrb.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_jw7gpvjw7gpvjw7g.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_jwhgr0jwhgr0jwhg.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_lqmfatlqmfatlqmf.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/Gemini_Generated_Image_vpy6tevpy6tevpy6.png" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-56-35-461.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-56-36-096.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-56-36-942.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-57-14-839.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-57-15-430.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-57-15-899.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_10-57-16-424.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_11-29-03-923.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_11-29-04-435.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Barangay%20S2S/viber_image_2026-04-30_11-29-05-271.jpg" alt="Brgy S2S Project" loading="lazy" /></div>
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="assets/achievements/viber_image_2026-04-16_11-10-13-395.jpg" alt="Achievement moment 2" loading="lazy" />
+          <!-- Project Pamato -->
+          <div class="gallery-pane" id="pamato">
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/achievements/viber_image_2026-04-16_11-10-13-395.jpg" alt="Project Pamato" loading="lazy" />
+              </div>
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="assets/achievements/viber_image_2026-04-16_11-13-44-200.jpg" alt="Achievement moment 3" loading="lazy" />
+          <!-- MDU -->
+          <div class="gallery-pane" id="mdu">
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/achievements/viber_image_2026-04-16_11-13-44-200.jpg" alt="MDU Project" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <!-- SLI -->
+          <div class="gallery-pane" id="sli">
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/1.jpg" alt="SLI Project" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <!-- Nap Grooming -->
+          <div class="gallery-pane" id="grooming">
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/2.jpg" alt="Nap Grooming" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <!-- Awarding of Employees -->
+          <div class="gallery-pane" id="awarding">
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="assets/Awarding%20Employees/Gemini_Generated_Image_2xsayg2xsayg2xsa.png" alt="Awarding of Employees" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Awarding%20Employees/Gemini_Generated_Image_uvv70uuvv70uuvv7.png" alt="Awarding of Employees" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Awarding%20Employees/viber_image_2026-04-30_11-28-59-557.jpg" alt="Awarding of Employees" loading="lazy" /></div>
+              <div class="gallery-item"><img src="assets/Awarding%20Employees/viber_image_2026-04-30_11-29-00-181.jpg" alt="Awarding of Employees" loading="lazy" /></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <footer class="site-footer">
-      <div class="footer-main">
-        <div class="footer-logo-wrap">
-          <img src="assets/LOGO-NOBG.png" alt="AICOM Logo" class="footer-logo" />
-        </div>
-        <nav class="footer-nav">
-          <a href="index.html#home">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#services">Services</a>
-          <a href="faq.html">FAQS</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/AicomS2SConvergePH" class="footer-social-icon" target="_blank" aria-label="Facebook">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z" fill="#36d6cc"/></svg>
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="footer-social-icon" aria-label="Gmail" target="_blank" rel="noopener">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z" fill="#36d6cc"/></svg>
-          </a>
-        </div>
-      </div>
       <div class="footer-copyright">
-        &copy; 2026 AICOM Marketing Services. Designed by <span style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
+        &copy; <span id="current-year"></span> AICOM Marketing Services. Designed by <span
+          style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
       </div>
     </footer>
-
   </main>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal">
+    <span class="close-modal" aria-label="Close modal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Enlarged achievement image">
+  </div>
 
   <script>
     const menuToggle = document.getElementById("menuToggle");
@@ -218,6 +302,80 @@
     menuClose.addEventListener("click", closeMenu);
     menuOverlay.addEventListener("click", closeMenu);
     sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    // Gallery Tabs Logic
+    const galleryTabs = document.querySelectorAll('.gallery-tab');
+    const galleryPanes = document.querySelectorAll('.gallery-pane');
+    const mobileSelect = document.querySelector('.gallery-tabs-mobile');
+
+    function switchTab(targetId) {
+      // Remove active class from all tabs and panes
+      galleryTabs.forEach(t => t.classList.remove('active'));
+      galleryPanes.forEach(p => p.classList.remove('active'));
+
+      // Show corresponding pane
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) targetPane.classList.add('active');
+
+      // Update active desktop tab
+      const correspondingTab = Array.from(galleryTabs).find(t => t.getAttribute('data-tab') === targetId);
+      if (correspondingTab) correspondingTab.classList.add('active');
+
+      // Sync mobile select
+      if (mobileSelect) mobileSelect.value = targetId;
+    }
+
+    galleryTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+        switchTab(targetId);
+      });
+    });
+
+    if (mobileSelect) {
+      mobileSelect.addEventListener('change', function() {
+        switchTab(this.value);
+      });
+    }
+
+    // Image Modal Logic
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close-modal");
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', function() {
+        modal.classList.add("show");
+        modalImg.src = this.src;
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove("show");
+      document.body.style.overflow = "auto";
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close when clicking outside image
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape" && modal.classList.contains("show")) {
+        closeModal();
+      }
+    });
+  </script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>

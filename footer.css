@@ -12,12 +12,34 @@
 /* Modern Footer Redesign */
 .site-footer {
   width: 100%;
-  background: var(--paper);
-  border-top: #35d1c7 solid 4px;
-  color: #11343d;
-  font-family: "Segoe UI", Arial, sans-serif;
+  position: relative;
+  background: linear-gradient(135deg, #0b1a20 0%, #11343d 100%);
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
   margin-top: 48px;
-  box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.06), 0 0.5px 0 #36d6cc;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #36d6cc, #1f8a84, #36d6cc);
+  background-size: 200% auto;
+  animation: gradientShine 4s linear infinite;
+}
+
+@keyframes gradientShine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .site-footer .footer-nav a {
@@ -37,34 +59,7 @@
   background: transparent;
 }
 
-.footer-social {
-  display: flex;
-  gap: 22px;
-  margin-bottom: 18px;
-}
 
-.footer-social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: #35d1c7 1px solid;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(54, 214, 204, 0.10);
-  transition: background 0.2s, transform 0.2s;
-  text-decoration: none;
-}
-
-.footer-social-icon:hover {
-  background: #e9fbf9;
-  transform: translateY(-3px) scale(1.08);
-}
-
-.footer-social-icon svg {
-  display: block;
-}
 
 .footer-nav {
   display: flex;
@@ -103,14 +98,27 @@
 }
 
 .footer-copyright {
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
-  font-size: 0.98rem;
-  color: #36d6cc;
-  padding: 12px 0 10px 0;
-  background: var(--paper);
-  border-top: 2px solid #35d1c7;
+  font-size: 0.95rem;
+  color: #a3bac2;
+  padding: 24px 20px;
   width: 100%;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.footer-copyright span {
+  color: #36d6cc;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(54, 214, 204, 0.25);
 }
 
 @media (max-width: 600px) {
@@ -164,8 +172,8 @@
 
   .footer-copyright {
     width: 100%;
-    padding: 10px 12px;
-    font-size: 0.9rem;
+    padding: 18px 16px;
+    font-size: 0.88rem;
   }
 }
 

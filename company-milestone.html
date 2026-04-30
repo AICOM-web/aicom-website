@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,25 +8,54 @@
   <link rel="stylesheet" href="details.css" />
   <link rel="stylesheet" href="company-milestone.css" />
   <link rel="stylesheet" href="footer.css" />
+  <!-- Banner Lightbox Script -->
+  <script src="banner-lightbox.js" defer></script>
 </head>
+
 <body class="org-page milestone-page">
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="index.html#home">
-        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo" />
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html#home" class="logo" aria-label="AICOM Home">
+        <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo-image" />
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="faq.html">FAQS</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="main-nav">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="faq.html">FAQS</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="header-social">
+          <div class="fb-dropdown-wrapper">
+            <button class="header-social-icon fb-dropdown-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z"
+                  fill="#36d6cc" />
+              </svg>
+            </button>
+            <div class="fb-dropdown-menu">
+              <a href="https://www.facebook.com/AicomS2SConvergePH" target="_blank">AICOM S2S</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHNCR" target="_blank">AICOM NCR</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHCavite" target="_blank">AICOM CAVITE</a>
+            </div>
+          </div>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="header-social-icon"
+            aria-label="Gmail" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
+                fill="#36d6cc" />
+            </svg>
+          </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileSidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
   <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
@@ -51,13 +81,10 @@
 
   <main class="org-layout" role="main">
     <section class="org-section">
-      <div
-        class="org-section__banner"
-        aria-hidden="true"
+      <div class="org-section__banner" aria-hidden="true"
         style='background:
           linear-gradient(to left, rgba(244, 245, 246, 0.08), rgba(244, 245, 246, 0.34)),
-          url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80") center / cover no-repeat;'
-      ></div>
+          url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80") center / cover no-repeat;'></div>
       <div class="org-section__inner">
         <h1>Company Milestone</h1>
         <p>
@@ -133,28 +160,10 @@
     </section>
 
     <footer class="site-footer">
-      <div class="footer-main">
-        <div class="footer-logo-wrap">
-          <img src="assets/LOGO-NOBG.png" alt="AICOM Logo" class="footer-logo" />
-        </div>
-        <nav class="footer-nav">
-          <a href="index.html#home">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#services">Services</a>
-          <a href="faq.html">FAQS</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/AicomS2SConvergePH" class="footer-social-icon" target="_blank" aria-label="Facebook">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z" fill="#36d6cc"/></svg>
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="footer-social-icon" aria-label="Gmail" target="_blank" rel="noopener">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z" fill="#36d6cc"/></svg>
-          </a>
-        </div>
-      </div>
+
       <div class="footer-copyright">
-        &copy; 2026 AICOM Marketing Services. Designed by <span style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
+        &copy; <span id="current-year"></span> AICOM Marketing Services. Designed by <span
+          style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
       </div>
     </footer>
   </main>
@@ -182,5 +191,9 @@
     menuOverlay.addEventListener("click", closeMenu);
     sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
   </script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>

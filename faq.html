@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQs | AICOM</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="faqs.css" />
-   <link rel="stylesheet" href="details.css" />
+  <link rel="stylesheet" href="details.css" />
   <link rel="stylesheet" href="footer.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="faq-float.js" defer></script>
   <script src="video-preview.js" defer></script>
-  
+
 </head>
+
 <body>
   <!-- Floating FAQ Button -->
   <a id="faq-float-btn" aria-label="Open FAQs" href="faq.html">
@@ -20,21 +22,47 @@
   </a>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="index.html" class="logo" aria-label="AICOM Home">
+      <a href="index.html#home" class="logo" aria-label="AICOM Home">
         <img src="assets/NEW AICOM PROFILE.jpg" alt="AICOM Logo" class="logo-image" />
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="faq.html">FAQS</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="main-nav">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="faq.html">FAQS</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="header-social">
+          <div class="fb-dropdown-wrapper">
+            <button class="header-social-icon fb-dropdown-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z"
+                  fill="#36d6cc" />
+              </svg>
+            </button>
+            <div class="fb-dropdown-menu">
+              <a href="https://www.facebook.com/AicomS2SConvergePH" target="_blank">AICOM S2S</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHNCR" target="_blank">AICOM NCR</a>
+              <a href="https://www.facebook.com/AicomS2SConvergePHCavite" target="_blank">AICOM CAVITE</a>
+            </div>
+          </div>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="header-social-icon"
+            aria-label="Gmail" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
+                fill="#36d6cc" />
+            </svg>
+          </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileSidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
   <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
@@ -43,12 +71,12 @@
       <button class="sidebar-close" id="menuClose" aria-label="Close menu">&times;</button>
     </div>
     <nav class="sidebar-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#achievements">FAQS</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#achievements">FAQS</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
   </aside>
   <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -86,7 +114,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span class="material-icons">help_outline</span>
-           What should I do if I have no internet connection?
+            What should I do if I have no internet connection?
             <span class="material-icons dropdown-icon">expand_more</span>
           </button>
           <div class="faq-answer">
@@ -96,7 +124,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span class="material-icons">help_outline</span>
-           Are your services available in all areas?
+            Are your services available in all areas?
             <span class="material-icons dropdown-icon">expand_more</span>
           </button>
           <div class="faq-answer">
@@ -106,7 +134,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span class="material-icons">help_outline</span>
-           How can I buy load from AICOM?
+            How can I buy load from AICOM?
             <span class="material-icons dropdown-icon">expand_more</span>
           </button>
           <div class="faq-answer">
@@ -116,7 +144,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span class="material-icons">help_outline</span>
-           What should I do if I did not receive my load?
+            What should I do if I did not receive my load?
             <span class="material-icons dropdown-icon">expand_more</span>
           </button>
           <div class="faq-answer">
@@ -128,13 +156,16 @@
 
       <!-- Video Tutorial Buttons -->
       <div class="faq-tutorials" style="margin-top: 48px; text-align: center;">
-        <h2 style="font-size: 1.5rem; color: #0e3c39; margin-bottom: 24px; font-family: 'Segoe UI', Arial, sans-serif;">Video Tutorials</h2>
+        <h2 style="font-size: 1.5rem; color: #0e3c39; margin-bottom: 24px; font-family: 'Segoe UI', Arial, sans-serif;">
+          Video Tutorials</h2>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <button onclick="if(window.playVideo) window.playVideo('s2s')" class="btn-primary" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+          <button onclick="if(window.playVideo) window.playVideo('s2s')" class="btn-primary"
+            style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
             <span class="material-icons">play_circle</span>
             How to Load S2S Converge
           </button>
-          <button onclick="if(window.playVideo) window.playVideo('wifi')" class="btn-primary" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+          <button onclick="if(window.playVideo) window.playVideo('wifi')" class="btn-primary"
+            style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
             <span class="material-icons">play_circle</span>
             How to Reset Wifi Password
           </button>
@@ -143,34 +174,16 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-logo-wrap">
-        <img src="assets/LOGO-NOBG.png" alt="AICOM Logo" class="footer-logo" />
-      </div>
-      <nav class="footer-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="faq.html">FAQS</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/AicomS2SConvergePH" class="footer-social-icon" target="_blank" aria-label="Facebook">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M15.5 8.5h-2V7.5c0-.4.3-.5.5-.5h1.5V5h-2c-1.7 0-2.5 1.3-2.5 2.5V8.5H8v2h2v5h2.5v-5h1.7l.3-2z" fill="#36d6cc"/></svg>
-        </a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="footer-social-icon" aria-label="Gmail" target="_blank" rel="noopener">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z" fill="#36d6cc"/></svg>
-        </a>
-      </div>
-    </div>
+
     <div class="footer-copyright">
-      &copy; 2026 AICOM Marketing Services. Designed by <span style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
+      &copy; <span id="current-year"></span> AICOM Marketing Services. Designed by <span
+        style="font-weight:600;letter-spacing:0.02em;">AICOM</span>
     </div>
   </footer>
   <script>
     // FAQ accordion logic
     document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         const expanded = this.getAttribute('aria-expanded') === 'true';
         document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
         document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
@@ -201,5 +214,9 @@
     menuOverlay.addEventListener("click", closeMenu);
     sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
   </script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>

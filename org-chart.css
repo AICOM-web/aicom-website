@@ -88,26 +88,109 @@
   color: #2b4850;
 }
 
-/* ORG TREE WRAPPER */
-.org-tree-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding: 10px 0 40px;
+/* TABS */
+.team-tabs {
   display: flex;
   justify-content: center;
-  scrollbar-width: thin;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
-.org-tree {
-  display: inline-block;
+.tab-btn {
+  padding: 10px 26px;
+  font-size: 0.95rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  border: 2px solid #1abcb2;
+  background: transparent;
+  color: #0e3c39;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #1abcb2;
+  color: #ffffff;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ORG GRID */
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  padding: 10px 0 40px;
+}
+
+@media (max-width: 1024px) {
+  .org-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .org-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .org-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .org-page .team-card {
+    padding: 12px 10px;
+  }
+
+  .org-page .team-card__photo,
+  .org-page .team-card__avatar {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+  }
+
+  .org-grid .team-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .org-grid .team-card p {
+    font-size: 0.75rem;
+  }
 }
 
 /* ORG TREE */
 .org-tree ul {
-  padding-top: 20px;
+  padding-top: 10px;
   position: relative;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   transition: all 0.5s;
   list-style-type: none;
   margin: 0;
@@ -115,94 +198,36 @@
 }
 
 .org-tree li {
-  float: left;
   text-align: center;
   list-style-type: none;
   position: relative;
-  padding: 20px 4px 0 4px;
   transition: all 0.5s;
 }
 
-/* We will use ::before and ::after to draw the connectors */
-.org-tree li::before,
-.org-tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 2px solid #1abcb2;
-  width: 50%;
-  height: 20px;
-}
-
-.org-tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 2px solid #1abcb2;
-}
-
-/* We need to remove left-right connectors from elements without any siblings */
-.org-tree li:only-child::after,
-.org-tree li:only-child::before {
-  display: none;
-}
-
-/* Remove space from the top of single children */
-.org-tree li:only-child {
-  padding-top: 0;
-}
-
-/* Remove left connector from first child and right connector from last child */
-.org-tree li:first-child::before,
-.org-tree li:last-child::after {
-  border: 0 none;
-}
-
-/* Adding back the vertical connector to the last nodes */
-.org-tree li:last-child::before {
-  border-right: 2px solid #1abcb2;
-  border-radius: 0 4px 0 0;
-}
-
-.org-tree li:first-child::after {
-  border-radius: 4px 0 0 0;
-}
-
-/* Time to add downward connectors from parents */
-.org-tree ul ul::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  border-left: 2px solid #1abcb2;
-  width: 0;
-  height: 20px;
-  transform: translateX(-1px);
-}
-
-.org-tree .team-card {
-  display: inline-block;
-  width: 215px;
-  margin: 0 auto;
+.org-grid .team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   position: relative;
-  padding: 12px 6px;
+  padding: 20px 14px;
   white-space: normal;
 }
 
 /* Smaller photos to fit */
-.org-tree .team-card__photo {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 8px;
+.org-grid .team-card__photo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
 }
 
-.org-tree .team-card h3 {
-  font-size: 0.85rem;
+.org-grid .team-card h3 {
+  font-size: 0.95rem;
   margin-bottom: 4px;
 }
 
-.org-tree .team-card p {
-  font-size: 0.75rem;
+.org-grid .team-card p {
+  font-size: 0.8rem;
 }
 
 .org-page .team-card {
@@ -505,6 +530,19 @@
   .org-tree .team-card p {
     font-size: 0.8rem;
     margin: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-tabs {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
   }
 }
 

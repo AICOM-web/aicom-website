@@ -147,11 +147,14 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     // Reset overlay to show video modal
-    overlay.style.background = 'rgba(0,0,0,0.7)';
+    overlay.style.display = 'flex';
+    // Small delay to allow display:flex to apply before opacity transition
+    setTimeout(() => {
+      overlay.style.background = 'rgba(0,0,0,0.7)';
+    }, 10);
     overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
     overlay.style.pointerEvents = 'auto';
-    overlay.style.display = 'flex';
 
     // Reset modal to center position
     modal.style.position = 'relative';
@@ -203,6 +206,7 @@ window.addEventListener('DOMContentLoaded', function () {
   overlay.style.justifyContent = 'center';
   overlay.style.zIndex = '9999';
   overlay.style.padding = '10px';
+  overlay.style.transition = 'background 0.3s ease, opacity 0.3s ease';
 
   // Create modal
   modal = document.createElement('div');
@@ -222,14 +226,26 @@ window.addEventListener('DOMContentLoaded', function () {
   closeBtn.textContent = '×';
   closeBtn.setAttribute('aria-label', 'Close video preview');
   closeBtn.style.position = 'absolute';
-  closeBtn.style.top = isMobile() ? '8px' : '10px';
-  closeBtn.style.right = isMobile() ? '12px' : '18px';
+  closeBtn.style.top = isMobile() ? '10px' : '14px';
+  closeBtn.style.right = isMobile() ? '10px' : '14px';
   closeBtn.style.background = 'none';
   closeBtn.style.border = 'none';
-  closeBtn.style.fontSize = isMobile() ? '1.5rem' : '2rem';
+  closeBtn.style.fontSize = isMobile() ? '1.8rem' : '2.2rem';
   closeBtn.style.cursor = 'pointer';
   closeBtn.style.color = '#0e3c39';
-  closeBtn.style.padding = '4px';
+  closeBtn.style.width = '36px';
+  closeBtn.style.height = '36px';
+  closeBtn.style.display = 'flex';
+  closeBtn.style.alignItems = 'center';
+  closeBtn.style.justifyContent = 'center';
+  closeBtn.style.lineHeight = '1';
+  closeBtn.style.padding = '0';
+  closeBtn.style.zIndex = '10001';
+  closeBtn.style.borderRadius = '50%';
+  closeBtn.style.transition = 'background 0.2s';
+
+  closeBtn.addEventListener('mouseenter', () => closeBtn.style.background = 'rgba(0,0,0,0.05)');
+  closeBtn.addEventListener('mouseleave', () => closeBtn.style.background = 'none');
 
   // Video element
   video = document.createElement('video');
@@ -272,7 +288,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // For mobile, show as draggable floating overlay
     if (mobile) {
-      overlay.style.background = 'none';
+      overlay.style.background = 'rgba(0,0,0,0)';
       overlay.style.alignItems = 'flex-end';
       overlay.style.justifyContent = 'flex-end';
       overlay.style.pointerEvents = 'none';
@@ -398,7 +414,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     // Desktop: floating draggable preview
-    overlay.style.background = 'none';
+    overlay.style.background = 'rgba(0,0,0,0)';
     overlay.style.alignItems = 'flex-end';
     overlay.style.justifyContent = 'flex-end';
     overlay.style.pointerEvents = 'none';
