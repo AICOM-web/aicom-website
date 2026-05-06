@@ -16,66 +16,83 @@
 </head>
 
 <body>
-  <!-- Floating FAQ Button -->
-  <a id="faq-float-btn" aria-label="Open FAQs" href="faq.html">
-    <span class="material-icons" style="font-size:1.7rem;vertical-align:middle;">help_outline</span>
-  </a>
+  <!-- Floating buttons (QR, FAQ, Video) are dynamically injected by scripts -->
 
-  <!-- FAQ Modal -->
-  <div id="faq-modal"
-    style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.32);align-items:center;justify-content:center;">
-    <div
-      style="background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;width:400px;padding:28px 22px 18px 22px;position:relative;">
-      <button id="faq-modal-close" aria-label="Close FAQ"
-        style="position:absolute;top:10px;right:18px;background:none;border:none;font-size:2rem;cursor:pointer;">
-        <span class="material-icons" style="font-size:2rem;">close</span>
-      </button>
-      <h2 style="margin-top:0;font-size:1.3rem;color:#0e3c39;font-family:'Segoe UI',Arial,sans-serif;">Frequently Asked
-        Questions</h2>
-      <div style="font-size:1rem;color:#1d3b43;">
-        <strong>Q1: What is AICOM?</strong><br>
-        A: AICOM is a marketing services company.<br><br>
-        <strong>Q2: How can I contact you?</strong><br>
-        A: Use the Contact section or email us directly.<br><br>
-        <strong>Q3: Where are you located?</strong><br>
-        A: Our address is available in the About section.
-      </div>
-    </div>
-  </div>
   <div id="otherBusinessModalOverlay" class="other-business-modal-overlay" aria-hidden="true">
     <div class="other-business-modal" role="dialog" aria-modal="true" aria-labelledby="other-business-modal-title">
+      <!-- Bubble Background inside Modal -->
+      <div class="bubbles-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+      </div>
+
       <button class="other-business-modal__close" id="otherBusinessModalClose" aria-label="Close Other Business">
         <span class="material-icons">close</span>
       </button>
-      <div class="other-business-modal__header">
-        <h2 id="other-business-modal-title">Other Business</h2>
-      </div>
+
       <div class="other-business-modal__grid">
         <div class="other-business-modal__media">
-          <img src="assets\aicom.png" alt="Modern business workspace" class="other-business-modal__image" />
+          <img src="assets/aicom.png" alt="AICOM Store" class="other-business-modal__image" />
         </div>
-        <div class="other-business-modal__details">
-          <div class="other-business-modal__section">
-            <p>A one-stop shop designed to provide essential daily services for the community. The main branch offers a
-              wide range of grocery items, pharmaceutical products, and convenient payment solutions. Customers can
-              easily access everyday necessities, healthcare needs, and digital services in one place.</p>
+
+        <div class="other-business-modal__content">
+          <div class="other-business-modal__header">
+            <h2 id="other-business-modal-title">Other Business</h2>
+            <div class="title-underline"></div>
           </div>
-          <div class="other-business-modal__section">
-            <h3>Services Offered</h3>
-            <ul class="other-business-modal__services">
-              <li>Grocery essentials and daily needs</li>
-              <li>Pharmacy and over-the-counter medicines</li>
-              <li>Bills payment and e-commerce support</li>
-            </ul>
+
+          <p class="modal-description">
+            A one-stop shop designed to provide essential daily services for the community. The main branch offers a
+            wide range of grocery items, pharmaceutical products, and convenient payment solutions. Customers can easily
+            access everyday necessities, healthcare needs, and digital services in one place.
+          </p>
+
+          <div class="modal-section">
+            <div class="section-label">
+              <span class="material-icons">shopping_bag</span>
+              <h3>Services Offered</h3>
+            </div>
+            <div class="services-cards">
+              <div class="service-modal-card">
+                <span class="material-icons">shopping_cart</span>
+                <p>Grocery essentials and daily needs</p>
+              </div>
+              <div class="service-modal-card">
+                <span class="material-icons">medical_services</span>
+                <p>Pharmacy and over-the-counter medicines</p>
+              </div>
+              <div class="service-modal-card">
+                <span class="material-icons">payments</span>
+                <p>Bills payment and e-commerce support</p>
+              </div>
+            </div>
           </div>
-          <div class="other-business-modal__section">
-            <h3>Branches</h3>
-            <ul class="other-business-modal__branches">
-              <li>Santa Rita Karsada Branch</li>
-              <li>Balagtas Branch</li>
-            </ul>
+
+          <div class="modal-section">
+            <div class="section-label">
+              <span class="material-icons">store</span>
+              <h3>Branches</h3>
+            </div>
+            <div class="branch-pills">
+              <div class="branch-pill">
+                <span class="material-icons">location_on</span>
+                Santa Rita Karsada Branch
+              </div>
+              <div class="branch-pill">
+                <span class="material-icons">location_on</span>
+                Balagtas Branch
+              </div>
+            </div>
           </div>
-          <div class="other-business-modal__section">
+
+          <div class="modal-footer-box">
+            <div class="check-icon">
+              <span class="material-icons">check_circle</span>
+            </div>
             <p>Both branches are dedicated to delivering accessible, affordable, and high-quality services. Through
               continuous improvement and customer-focused solutions, ALLENONE aims to support the daily needs of every
               household in the community.</p>
@@ -111,14 +128,21 @@
               <a href="https://www.facebook.com/AicomS2SConvergePHCavite" target="_blank">AICOM CAVITE</a>
             </div>
           </div>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" class="header-social-icon"
-            aria-label="Gmail" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path
-                d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
-                fill="#36d6cc" />
-            </svg>
-          </a>
+          <div class="fb-dropdown-wrapper">
+            <button class="header-social-icon fb-dropdown-btn" aria-label="Gmail">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7.5v9A1.5 1.5 0 0 0 5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5zm1.5-.5h13a.5.5 0 0 1 .5.5v.2l-7 4.7-7-4.7V7.5a.5.5 0 0 1 .5-.5zm13 11h-13a.5.5 0 0 1-.5-.5v-7.7l6.6 4.4a1 1 0 0 0 1.1 0l6.6-4.4v7.7a.5.5 0 0 1-.5.5z"
+                  fill="#36d6cc" />
+              </svg>
+            </button>
+            <div class="fb-dropdown-menu">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jbd.aicomhrdepartment@gmail.com" target="_blank"
+                rel="noopener">Recruitment</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aicom.s2sloading@gmail.com" target="_blank"
+                rel="noopener">S2S</a>
+            </div>
+          </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
           aria-controls="mobileSidebar">
@@ -150,12 +174,25 @@
       <div class="container hero-content">
         <div class="hero-copy">
           <p class="hero-eyebrow animate-on-scroll">Fiber &amp; connectivity</p>
-          <h1 class="animate-on-scroll animate-delay-1">AICOM Marketing Services</h1>
+          <h1 class="hero-title">
+            <span class="letter" style="--i:1">A</span><span class="letter" style="--i:2">I</span><span class="letter"
+              style="--i:3">C</span><span class="letter" style="--i:4">O</span><span class="letter"
+              style="--i:5">M</span><span class="letter" style="--i:6">&nbsp;</span><span class="letter"
+              style="--i:7">M</span><span class="letter" style="--i:8">a</span><span class="letter"
+              style="--i:9">r</span><span class="letter" style="--i:10">k</span><span class="letter"
+              style="--i:11">e</span><span class="letter" style="--i:12">t</span><span class="letter"
+              style="--i:13">i</span><span class="letter" style="--i:14">n</span><span class="letter"
+              style="--i:15">g</span><span class="letter" style="--i:16">&nbsp;</span><span class="letter"
+              style="--i:17">S</span><span class="letter" style="--i:18">e</span><span class="letter"
+              style="--i:19">r</span><span class="letter" style="--i:20">v</span><span class="letter"
+              style="--i:21">i</span><span class="letter" style="--i:22">c</span><span class="letter"
+              style="--i:23">e</span><span class="letter" style="--i:24">s</span>
+          </h1>
           <p class="hero-lead animate-on-scroll animate-delay-2">
             Powering connections nationwide.
             As an authorized distributor of Surf2Sawa Prepaid Internet by Converge,
             we bring fast, reliable, and affordable connectivity
-            to Filipino homes—backed by trusted telecommunication marketing expertise.
+            to Filipino homesâ€”backed by trusted telecommunication marketing expertise.
           </p>
           <div class="hero-cta animate-on-scroll animate-delay-3"
             style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
@@ -167,9 +204,20 @@
     </section>
 
     <section class="company" id="about">
-      <div class="container">
-        <h2 class="title-ribbon animate-on-scroll">The Company</h2>
-        <p class="section-copy animate-on-scroll animate-delay-1">
+      <div class="bubbles-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble bubble-8"></div>
+      </div>
+      <div class="container about-header-wrapper">
+        <span class="about-eyebrow animate-on-scroll" style="color: #36d6cc;">ABOUT US</span>
+        <h2 class="title-ribbon about-title animate-on-scroll">The Company</h2>
+        <p class="section-subtitle animate-on-scroll animate-delay-1">
           AICOM Marketing Services was established to provide reliable
           telecommunication services, focusing on delivering high-speed internet
           through advanced fiber-optic technology. The company operates within
@@ -178,90 +226,112 @@
         </p>
       </div>
 
-      <div class="infocard-carousel cards-carousel animate-on-scroll animate-delay-2" id="achievements" role="region"
-        aria-roledescription="carousel" aria-label="Company highlights">
-        <button class="carousel-btn carousel-btn-prev" id="cardsPrev" type="button" aria-label="Previous slide">
-          <span class="material-icons" style="font-size:2rem;">chevron_left</span>
-        </button>
-        <div class="infocard-carousel__viewport">
-          <div class="cards-row infocard-carousel__track" id="cardsTrack" tabindex="0">
-            <article class="info-card">
-              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
-                alt="Community partners" />
-              <div class="card-body">
-                <h3>Community Partners</h3>
-                <p>Trusted partners supporting our mission in different regions.</p>
-                <a class="info-card__cta" href="community-partners.html">See more</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <img src="assets\achieve.png" alt="Achievements" />
-              <div class="card-body">
-                <h3>Achievements</h3>
-                <p>Key milestones and accomplishments in our growth and service expansion.</p>
-                <a class="info-card__cta" href="achievements.html">See more</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <img src="assets\org-chart.png" alt="Organizational chart" />
-              <div class="card-body">
-                <h3>Organizational Chart</h3>
-                <p>A brief overview of the company structure and responsibilities.</p>
-                <a class="info-card__cta" href="organizational-chart.html">See more</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=900&q=80"
-                alt="Mission and vision" />
-              <div class="card-body">
-                <h3>Mission and Vision</h3>
-                <p>Our commitment to quality service and customer satisfaction.</p>
-                <a class="info-card__cta" href="mission-vision.html">See more</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
-                alt="Core values" />
-              <div class="card-body">
-                <h3>Core Values</h3>
-                <p>The principles that shape our culture, teamwork, and innovation.</p>
-                <a class="info-card__cta" href="core-values.html">See more</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
-                alt="Company milestone timeline" />
-              <div class="card-body">
-                <h3>Company Milestone</h3>
-                <p>A timeline of key achievements and growth of the company from its establishment to the present.</p>
-                <a class="info-card__cta" href="company-milestone.html">See more</a>
-              </div>
-            </article>
-          </div>
+      <div class="container about-filters-wrapper animate-on-scroll animate-delay-2">
+        <div class="about-filters">
+          <button class="filter-pill" data-target="0">Partners</button>
+          <button class="filter-pill" data-target="1">Achievements</button>
+          <button class="filter-pill" data-target="2">Organization</button>
+          <button class="filter-pill" data-target="3">Mission</button>
+          <button class="filter-pill" data-target="4">Values</button>
+          <button class="filter-pill" data-target="5">Milestone</button>
         </div>
-        <button class="carousel-btn carousel-btn-next" id="cardsNext" type="button" aria-label="Next slide">
-          <span class="material-icons" style="font-size:2rem;">chevron_right</span>
-        </button>
+      </div>
+
+      <div class="coverflow-wrapper animate-on-scroll animate-delay-3" id="achievements" role="region"
+        aria-roledescription="carousel" aria-label="Company highlights">
+        <div class="coverflow-carousel" id="cardsTrack">
+          <article class="coverflow-card" data-index="0">
+            <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
+              alt="Community partners" />
+            <div class="card-body">
+              <h3>Community Partners</h3>
+              <p>Trusted partners supporting our mission in different regions.</p>
+              <a class="info-card__cta" href="community-partners.html">See more</a>
+            </div>
+          </article>
+          <article class="coverflow-card" data-index="1">
+            <img src="assets\achieve.png" alt="Achievements" />
+            <div class="card-body">
+              <h3>Achievements</h3>
+              <p>Key milestones and accomplishments in our growth and service expansion.</p>
+              <a class="info-card__cta" href="achievements.html">See more</a>
+            </div>
+          </article>
+          <article class="coverflow-card" data-index="2">
+            <img src="assets\org-chart.png" alt="Organizational chart" />
+            <div class="card-body">
+              <h3>Organizational Chart</h3>
+              <p>A brief overview of the company structure and responsibilities.</p>
+              <a class="info-card__cta" href="organizational-chart.html">See more</a>
+            </div>
+          </article>
+          <article class="coverflow-card" data-index="3">
+            <img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=900&q=80"
+              alt="Mission and vision" />
+            <div class="card-body">
+              <h3>Mission and Vision</h3>
+              <p>Our commitment to quality service and customer satisfaction.</p>
+              <a class="info-card__cta" href="mission-vision.html">See more</a>
+            </div>
+          </article>
+          <article class="coverflow-card" data-index="4">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+              alt="Core values" />
+            <div class="card-body">
+              <h3>Core Values</h3>
+              <p>The principles that shape our culture, teamwork, and innovation.</p>
+              <a class="info-card__cta" href="core-values.html">See more</a>
+            </div>
+          </article>
+          <article class="coverflow-card" data-index="5">
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+              alt="Company milestone timeline" />
+            <div class="card-body">
+              <h3>Company Milestone</h3>
+              <p>A timeline of key achievements and growth of the company from its establishment to the present.</p>
+              <a class="info-card__cta" href="company-milestone.html">See more</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="coverflow-controls">
+          <button class="nav-circle" id="cardsPrev" type="button" aria-label="Previous slide">
+            <span class="material-icons">arrow_back</span>
+          </button>
+          <button class="nav-circle" id="cardsNext" type="button" aria-label="Next slide">
+            <span class="material-icons">arrow_forward</span>
+          </button>
+        </div>
       </div>
     </section>
 
     <section class="products" id="services">
       <div class="container">
-        <h2 class="title-ribbon products-title animate-on-scroll">Products and Services</h2>
+        <h2 class="title-ribbon products-title animate-on-scroll" style="margin-bottom: 8px;">Products and Services</h2>
+        <p class="section-subtitle animate-on-scroll animate-delay-1">Explore our range of reliable telecommunication solutions designed for your daily connectivity needs.</p>
         <div class="products-shell">
           <div class="products-grid">
             <div class="products-media animate-on-scroll animate-delay-1">
               <div class="product-slideshow" id="productSlideshow">
+                <button class="slide-nav-btn prev-btn" id="productSlidePrev" aria-label="Previous slide">
+                  <span class="material-icons">chevron_left</span>
+                </button>
                 <div class="slides-window">
                   <img src="assets/1.jpg" alt="Product promo 1" class="product-slide is-active" />
                   <img src="assets/5.jpg" alt="Product promo 5" class="product-slide" />
                   <img src="assets/21.jpg" alt="Product promo 21" class="product-slide" />
                 </div>
+                <button class="slide-nav-btn next-btn" id="productSlideNext" aria-label="Next slide">
+                  <span class="material-icons">chevron_right</span>
+                </button>
               </div>
             </div>
 
             <div class="products-copy animate-on-scroll animate-delay-2">
-              <h3 class="products-copy__heading">Reliable Fiber Plans for Daily Needs</h3>
+              <div class="product-badge">
+                <span class="material-icons">wifi</span> STABLE. AFFORDABLE. ALWAYS CONNECTED.
+              </div>
+              <h3 class="products-copy__heading">Reliable Fiber Plans<br>for Daily Needs</h3>
               <p class="products-copy__lead">
                 AICOM delivers stable, affordable internet services designed for
                 homes, students, and small businesses.
@@ -298,19 +368,28 @@
               </ul>
               <div class="products-cta">
                 <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4290Dw9ZceYqgyuJTvzr9P5Ybpe6bsZXBEZUb4RtfRDRsKg/formResponse"
-                  class="btn-primary">Subscribe Now</a>
-                <button type="button" class="btn-outline" id="otherBusinessBtn">Other Business</button>
+                  class="btn-primary"><span class="material-icons">arrow_outward</span> SUBSCRIBE NOW</a>
+                <button type="button" class="btn-outline" id="otherBusinessBtn"><span class="material-icons">person</span> OTHER BUSINESS</button>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
     <section class="contact" id="contact">
+      <div class="bubbles-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble bubble-8"></div>
+      </div>
       <div class="container">
-        <h2 class="title-ribbon contact-title animate-on-scroll">Contact Us</h2>
+        <h2 class="title-ribbon contact-title animate-on-scroll" style="margin-bottom: 8px;">Contact Us</h2>
+        <p class="section-subtitle animate-on-scroll animate-delay-1">We're here to help. Reach out to AICOM for inquiries, support, or partnership opportunities.</p>
         <div class="contact-grid">
           <div class="contact-card animate-on-scroll animate-delay-1">
             <h3>Get in Touch</h3>
@@ -440,36 +519,88 @@
     menuOverlay.addEventListener("click", closeMenu);
     sidebarLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-    // Company carousel: explicit left/right directional navigation
-    (function setupManualCardsCarousel() {
-      function getSlideWidth() {
-        const firstCard = cardsTrack.querySelector('.info-card');
-        if (!firstCard) return 0;
-        const trackStyles = window.getComputedStyle(cardsTrack);
-        const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap || 0);
-        return firstCard.getBoundingClientRect().width + gap;
-      }
-      function moveCarousel(direction) {
-        const slideWidth = getSlideWidth();
-        if (!slideWidth) return;
-        cardsTrack.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
-      }
-      cardsPrev.addEventListener('click', () => {
-        moveCarousel(-1);
-      });
-      cardsNext.addEventListener('click', () => {
-        moveCarousel(1);
-      });
-      // Keyboard navigation
-      cardsTrack.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          moveCarousel(-1);
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          moveCarousel(1);
+    // Coverflow Carousel Logic
+    (function setupCoverflowCarousel() {
+      const track = document.getElementById('cardsTrack');
+      const prevBtn = document.getElementById('cardsPrev');
+      const nextBtn = document.getElementById('cardsNext');
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const cards = Array.from(track.querySelectorAll('.coverflow-card'));
+      if (cards.length === 0) return;
+
+      let currentIndex = 0;
+      const pills = Array.from(document.querySelectorAll('.filter-pill:not(.view-more)'));
+
+      function updateCoverflow() {
+        cards.forEach((card, i) => {
+          card.className = 'coverflow-card'; // reset classes
+
+          if (i === currentIndex) {
+            card.classList.add('active');
+          } else if (i === (currentIndex - 1 + cards.length) % cards.length) {
+            card.classList.add('prev-1');
+          } else if (i === (currentIndex + 1) % cards.length) {
+            card.classList.add('next-1');
+          } else if (i === (currentIndex - 2 + cards.length) % cards.length) {
+            card.classList.add('prev-2');
+          } else if (i === (currentIndex + 2) % cards.length) {
+            card.classList.add('next-2');
+          }
+        });
+
+        // Sync pills
+        pills.forEach(p => p.classList.remove('active'));
+        const targetPill = pills.find(p => p.getAttribute('data-target') == currentIndex && !p.classList.contains('pill-all'));
+        if (targetPill) {
+          targetPill.classList.add('active');
+        } else {
+          const allPill = pills.find(p => p.classList.contains('pill-all'));
+          if (allPill && currentIndex === 0) allPill.classList.add('active');
         }
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCoverflow();
       });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCoverflow();
+      });
+
+      // Allow clicking side cards to navigate
+      cards.forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+          if (!card.classList.contains('active')) {
+            // Prevent link clicks if card is not active
+            if (e.target.tagName === 'A' || e.target.closest('a')) {
+              e.preventDefault();
+            }
+            currentIndex = i;
+            updateCoverflow();
+          }
+        });
+      });
+
+      // Filter pills logic
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          const target = pill.getAttribute('data-target');
+          if (target !== null) {
+            currentIndex = parseInt(target, 10);
+            updateCoverflow();
+
+            // Override active pill to the clicked one (e.g. if 'All' is clicked instead of 'Partners')
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+          }
+        });
+      });
+
+      // Init
+      updateCoverflow();
     })();
 
     function showProductSlide(index) {
@@ -495,6 +626,20 @@
         startProductAutoplay();
       });
     });
+
+    const productSlidePrev = document.getElementById("productSlidePrev");
+    const productSlideNext = document.getElementById("productSlideNext");
+
+    if (productSlidePrev && productSlideNext) {
+      productSlidePrev.addEventListener('click', () => {
+        showProductSlide(productIndex - 1);
+        startProductAutoplay();
+      });
+      productSlideNext.addEventListener('click', () => {
+        showProductSlide(productIndex + 1);
+        startProductAutoplay();
+      });
+    }
 
     showProductSlide(0);
     startProductAutoplay();

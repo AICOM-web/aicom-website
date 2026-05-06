@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // Create the show video button first (always create it)
   const showVideoBtn = document.createElement('button');
-  showVideoBtn.setAttribute('aria-label', 'Show video preview');
+  showVideoBtn.className = 'floating-btn';
+  showVideoBtn.setAttribute('aria-label', 'Video Tutorial');
   showVideoBtn.style.position = 'fixed';
   showVideoBtn.style.bottom = '104px';
   showVideoBtn.style.right = '32px';
@@ -59,8 +60,8 @@ window.addEventListener('DOMContentLoaded', function () {
   // Create options menu
   const optionsMenu = document.createElement('div');
   optionsMenu.style.position = 'fixed';
-  optionsMenu.style.bottom = '170px';
-  optionsMenu.style.right = '32px';
+  optionsMenu.style.bottom = '104px';
+  optionsMenu.style.right = '100px';
   optionsMenu.style.background = '#ffffff';
   optionsMenu.style.borderRadius = '12px';
   optionsMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
@@ -142,7 +143,7 @@ window.addEventListener('DOMContentLoaded', function () {
       video.src = 'assets/resetpass.mp4';
       title.textContent = 'How to Change Wifi Password';
     } else {
-      video.src = '';
+      video.src = 'assets/S2S_LOAD.mp4';
       title.textContent = 'S2S Converge Loading Tutorial!';
     }
 
@@ -249,7 +250,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // Video element
   video = document.createElement('video');
-  video.src = ''; // Place your video in assets/hero.mp4
+  video.src = 'assets/S2S_LOAD.mp4'; 
   video.controls = true;
   video.autoplay = !videoShown;
   video.style.width = '100%';
